@@ -48,14 +48,22 @@ export const printUserInfo = (
 // REQS: use rest parameters
 //  getSum(1, 2, 3) === 6
 //  getSum(1, 2, 3, 4, 5) === 15
-export const getSum = () => {}
+export const getSum = (...nums) => {
+  let acc = 0;
+  for(let num of nums) {
+    acc += num;
+  }
+    return acc;
+}
 
 // INPUT: an unknown number of arguments
 // OUTPUT: an array with the first two arguments destructured and the remaining in a nested array
 // REQS: use rest parameters
 // getFirstTwoArgs(1, 2, 3, 4, 5) should return [1, 2, [3, 4, 5]]
 // getFirstTwoArgs('a', 'b', 'c', 'd') should return ['a', 'b', ['c', 'd']]
-export const getFirstTwoArgs = () => {}
+export const getFirstTwoArgs = (a, b, ...args) => {
+  return [a,b, [...args]]
+}
 
 // INPUT: an object with the following structure
 // {
@@ -78,7 +86,14 @@ export const getFirstTwoArgs = () => {}
 //    return a NEW object, do not modify the object passed in to the function
 //    use spread operator to create a new object
 
-export const addSneakerCount = () => {}
+export const addSneakerCount = ({
+  shoes: {shoes},
+  slogan: {slogan},
+  logo: {logo},
+  headquarters: {headquarters}
+}) => {
+  
+}
 
 // INPUT: brands from data.js
 // OUTPUT: the brand names listed
